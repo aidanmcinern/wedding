@@ -4,6 +4,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { BedDouble, Plane, PartyPopper, MapPin } from 'lucide-react'
 
+// API Configuration - Update this to your deployed backend URL
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'wedding-rsvp-backend.azurewebsites.net'; //'http://localhost:3001/api';
+
 export default function App() {
   const mountRef = useRef(null)
   const [activeInfo, setActiveInfo] = useState(null)
@@ -20,6 +23,8 @@ export default function App() {
   const [searchName, setSearchName] = useState('')
   const [guestParty, setGuestParty] = useState([])
   const [searchError, setSearchError] = useState('')
+  const [isSearching, setIsSearching] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const infoData = {
     accommodation: {
@@ -228,34 +233,40 @@ export default function App() {
     setGifFinished(false)
   }
 
-  const handleSearchGuest = () => {
+  const handleSearchGuest = async () => {
     if (!searchName.trim()) {
       setSearchError('Please enter a name')
       return
     }
 
-    const mockDatabase = {
-      'smith': [
-        { id: 1, name: 'John Smith', attending: false, mealPreference: '', dietaryRequirements: '', airbusInterest: false, shuttleNeeded: false },
-        { id: 2, name: 'Jane Smith', attending: false, mealPreference: '', dietaryRequirements: '', airbusInterest: false, shuttleNeeded: false },
-        { id: 3, name: 'Emma Smith', attending: false, mealPreference: '', dietaryRequirements: '', airbusInterest: false, shuttleNeeded: false },
-        { id: 7, name: 'Baby Smith', attending: false, mealPreference: '', dietaryRequirements: '', airbusInterest: false, shuttleNeeded: false }
-      ],
-      'johnson': [
-        { id: 4, name: 'Michael Johnson', attending: false, mealPreference: '', dietaryRequirements: '', airbusInterest: false, shuttleNeeded: false },
-        { id: 5, name: 'Sarah Johnson', attending: false, mealPreference: '', dietaryRequirements: '', airbusInterest: false, shuttleNeeded: false }
-      ]
-    }
+    setIsSearching(true)
+    setSearchError('')
 
-    const searchKey = searchName.toLowerCase().trim()
-    const foundParty = mockDatabase[searchKey]
+    try {
+      const response = await fetch(`${API_BASE_URL}/search-guest`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: searchName })
+      })
 
-    if (foundParty) {
-      setGuestParty(foundParty)
+      const data = await response.json()
+
+      if (!response.ok) {
+        setSearchError(data.error || 'An error occurred while searching')
+        setIsSearching(false)
+        return
+      }
+
+      setGuestParty(data.guests)
       setRsvpStep('form')
       setSearchError('')
-    } else {
-      setSearchError('Name not found in guest list. Please check spelling or contact us.')
+    } catch (error) {
+      console.error('Search error:', error)
+      setSearchError('Unable to connect to server. Please try again later.')
+    } finally {
+      setIsSearching(false)
     }
   }
 
@@ -269,19 +280,43 @@ export default function App() {
     setGuestParty(prev => prev.map(guest => ({ ...guest, [field]: value })))
   }
 
-  const handleRSVPSubmit = () => {
+  const handleRSVPSubmit = async () => {
     const invalidGuests = guestParty.filter(g => g.attending && !g.mealPreference)
     if (invalidGuests.length > 0) {
       alert('Please select a meal preference for all attending guests')
       return
     }
     
-    console.log('Submitting RSVP:', guestParty)
-    alert('Thank you for your RSVP! We look forward to celebrating with you.')
-    setShowRSVPForm(false)
-    setRsvpStep('search')
-    setSearchName('')
-    setGuestParty([])
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/submit-rsvp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ guests: guestParty })
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        alert(data.error || 'Failed to submit RSVP. Please try again.')
+        setIsSubmitting(false)
+        return
+      }
+
+      alert('Thank you for your RSVP! We look forward to celebrating with you.')
+      setShowRSVPForm(false)
+      setRsvpStep('search')
+      setSearchName('')
+      setGuestParty([])
+    } catch (error) {
+      console.error('Submit error:', error)
+      alert('Unable to connect to server. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   useEffect(() => {
@@ -352,13 +387,16 @@ export default function App() {
                   onChange={(e) => { setSearchName(e.target.value); setSearchError('') }}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearchGuest()}
                   placeholder="e.g., Smith"
-                  style={{ width: '100%', padding: '12px', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', boxSizing: 'border-box' }} 
+                  disabled={isSearching}
+                  style={{ width: '100%', padding: '12px', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', boxSizing: 'border-box', opacity: isSearching ? 0.6 : 1 }} 
                 />
                 {searchError && <p style={{ margin: '8px 0 0 0', fontSize: '14px', color: '#d32f2f' }}>{searchError}</p>}
               </div>
-              <button onClick={handleSearchGuest} style={{ marginTop: '12px', padding: '14px', background: '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer', transition: 'background 0.2s' }}
-                onMouseOver={(e) => e.target.style.background = '#333'}
-                onMouseOut={(e) => e.target.style.background = '#1a1a1a'}>Search</button>
+              <button onClick={handleSearchGuest} disabled={isSearching} style={{ marginTop: '12px', padding: '14px', background: isSearching ? '#999' : '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: isSearching ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}
+                onMouseOver={(e) => !isSearching && (e.target.style.background = '#333')}
+                onMouseOut={(e) => !isSearching && (e.target.style.background = '#1a1a1a')}>
+                {isSearching ? 'Searching...' : 'Search'}
+              </button>
             </div>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -394,7 +432,7 @@ export default function App() {
                       <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '100px' }}>Will be attending</th>
                       <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: '140px' }}>Menu Selection</th>
                       <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: '200px' }}>Dietary Requirements</th>
-                      <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '120px' }}>Would like more information about the Airbus Tour/ Toulouse History Walk</th>
+                      <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '120px' }}>Airbus Tour / Walk Interest</th>
                       <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '100px' }}>Will Require Shuttle</th>
                     </tr>
                   </thead>
@@ -445,13 +483,17 @@ export default function App() {
 
               <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
                 <button onClick={() => { setRsvpStep('search'); setSearchName(''); setGuestParty([]) }}
-                  style={{ flex: 1, padding: '14px', background: 'white', color: '#1a1a1a', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
-                  onMouseOver={(e) => e.target.style.borderColor = '#999'}
-                  onMouseOut={(e) => e.target.style.borderColor = '#e0e0e0'}>Back</button>
+                  disabled={isSubmitting}
+                  style={{ flex: 1, padding: '14px', background: 'white', color: '#1a1a1a', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', opacity: isSubmitting ? 0.6 : 1, transition: 'all 0.2s' }}
+                  onMouseOver={(e) => !isSubmitting && (e.target.style.borderColor = '#999')}
+                  onMouseOut={(e) => !isSubmitting && (e.target.style.borderColor = '#e0e0e0')}>Back</button>
                 <button onClick={handleRSVPSubmit}
-                  style={{ flex: 2, padding: '14px', background: '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer', transition: 'background 0.2s' }}
-                  onMouseOver={(e) => e.target.style.background = '#333'}
-                  onMouseOut={(e) => e.target.style.background = '#1a1a1a'}>Submit RSVP</button>
+                  disabled={isSubmitting}
+                  style={{ flex: 2, padding: '14px', background: isSubmitting ? '#999' : '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}
+                  onMouseOver={(e) => !isSubmitting && (e.target.style.background = '#333')}
+                  onMouseOut={(e) => !isSubmitting && (e.target.style.background = '#1a1a1a')}>
+                  {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
+                </button>
               </div>
             </div>
           )}
