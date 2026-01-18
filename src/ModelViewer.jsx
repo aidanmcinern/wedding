@@ -5,8 +5,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { BedDouble, Plane, PartyPopper, MapPin } from 'lucide-react'
 
 // API Configuration - Update this to your deployed backend URL
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
-
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://wedding-rsvp-backend.azurewebsites.net/api'
+  : 'http://localhost:3001/api';
+  
 export default function App() {
   const mountRef = useRef(null)
   const [activeInfo, setActiveInfo] = useState(null)
