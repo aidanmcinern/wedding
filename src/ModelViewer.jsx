@@ -4,11 +4,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { BedDouble, Plane, PartyPopper, MapPin } from 'lucide-react'
 
-// API Configuration - Update this to your deployed backend URL
+
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
   ? 'https://wedding-rsvp-backend.azurewebsites.net/api'
   : 'http://localhost:3001/api';
-  
+
 export default function App() {
   const mountRef = useRef(null)
   const [activeInfo, setActiveInfo] = useState(null)
@@ -379,16 +379,16 @@ export default function App() {
           {rsvpStep === 'search' ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <p style={{ margin: 0, fontSize: '16px', color: '#666', lineHeight: '1.6' }}>
-                Please enter your last name to find your invitation details.
+                Please enter your full name exactly as it appears on your invitation. Case doesn't matter, but spelling does!
               </p>
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600', color: '#333' }}>Last Name</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600', color: '#333' }}>Full Name</label>
                 <input 
                   type="text" 
                   value={searchName} 
                   onChange={(e) => { setSearchName(e.target.value); setSearchError('') }}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearchGuest()}
-                  placeholder="e.g., Smith"
+                  placeholder="e.g., Olive Mcinerney"
                   disabled={isSearching}
                   style={{ width: '100%', padding: '12px', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', boxSizing: 'border-box', opacity: isSearching ? 0.6 : 1 }} 
                 />
