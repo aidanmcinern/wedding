@@ -25,7 +25,7 @@ const content = {
     },
     venue: {
       title: 'The Big Day',
-      body: 'The ceremony and reception will be held together at the Château and in its gardens. It will be a relaxed day, so feel free to dress smart casual. A very rough time table:\n•  2pm - Arrival\n•  2.30pm - Ceremony\n•  3pm - Refreshments & Games \n•  4pm Cocktail Reception\n•  7pm Dinner\n•  Party',
+      body: 'The ceremony and reception will be held together at the Château and in its gardens. It will be a relaxed day, so feel free to dress smart casual. An indicative time table is as follows:\n•  2pm - Arrival\n•  2.30pm - Ceremony\n•  3pm - Refreshments & Games \n•  4pm Cocktail Reception\n•  7pm Dinner\n•  Party',
       label: 'The Big Day'
     }
   },
