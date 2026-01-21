@@ -9,142 +9,44 @@ const content = {
   en: {
     accommodation: {
       title: 'Accommodation',
-      sections: [
-        {
-          id: 'overview',
-          title: 'Overview',
-          body: "Toulouse is full of fantastic hotels and Airbnbs to suit all styles and budgets. We recommend staying in or around the city centre, where you'll be close to restaurants, cafés, shops and transport links."
-        },
-        {
-          id: 'areas',
-          title: 'Recommended Areas',
-          body: "Some areas you might like to consider include:\n• Historic centre (Capitole / Carmes) – beautiful architecture, walkable\n• Saint-Étienne – elegant, quieter, and close to parks and museums\n• Saint-Cyprien – trendy, relaxed, and just across the river with great food spots"
-        }
-      ],
+      body: 'Toulouse is full of fantastic hotels and Airbnbs to suit all styles and budgets. We recommend staying in or around the city centre, where you’ll be close to restaurants, cafés, shops and transport links.\n\nSome areas you might like to consider include:\n• Historic centre (Capitole / Carmes) – beautiful architecture, walkable\n• Saint-Étienne – elegant, quieter, and close to parks and museums\n• Saint-Cyprien – trendy, relaxed, and just across the river with great food spots',
       label: 'Accommodation'
     },
     transport: {
       title: 'Transport',
-      sections: [
-        {
-          id: 'getting-to-toulouse',
-          title: 'Getting to Toulouse',
-          body: "Toulouse Airport (TLS) is the main airport serving the city. From the airport, a shuttle bus runs every 15 minutes and takes you directly into the city centre. Taxis and Uber are also readily available, and there are several car hire companies located beside the terminal if you'd prefer to drive."
-        },
-        {
-          id: 'other-airports',
-          title: 'Other Airports',
-          body: "If you're planning to turn your trip into a longer holiday, there are several other airports within easy reach of Toulouse that you may find useful:\n• Carcassonne Airport – approx. 1.5 hours by train\n• Tarbes–Lourdes–Pyrénées Airport – approx. 2 hours by train\n• Bordeaux Airport – approx. 3.5 hours by train\n• Biarritz Airport – approx. 4 hours by train"
-        },
-        {
-          id: 'getting-to-venue',
-          title: 'Getting to the Venue',
-          body: "Château Saint Louis is located around 40 minutes north of Toulouse by car. There is plenty of on-site parking available if you choose to drive.\n\nAlternatively, we have arranged a shuttle bus running hourly between central Toulouse (Allées Jean-Jaurès) and the venue. If you plan to use the shuttle, please let us know in advance via the RSVP so we can ensure we have the right capacity."
-        }
-      ],
+      body: 'GETTING TO TOULOUSE\n\nToulouse Airport (TLS) is the main airport serving the city. From the airport, a shuttle bus runs every 15 minutes and takes you directly into the city centre. Taxis and Uber are also readily available, and there are several car hire companies located beside the terminal if you’d prefer to drive.\n\nIf you’re planning to turn your trip into a longer holiday, there are several other airports within easy reach of Toulouse that you may find useful:\n• Carcassonne Airport – approx. 1.5 hours by train\n• Tarbes–Lourdes–Pyrénées Airport – approx. 2 hours by train\n• Bordeaux Airport – approx. 3.5 hours by train\n• Biarritz Airport – approx. 4 hours by train\n\nGETTING TO THE VENUE\n\nChâteau Saint Louis is located around 40 minutes north of Toulouse by car. There is plenty of on-site parking available if you choose to drive.\n\nAlternatively, we have arranged a shuttle bus running hourly between central Toulouse (Allées Jean-Jaurès) and the venue. If you plan to use the shuttle, please let us know in advance via the RSVP so we can ensure we have the right capacity.',      
       label: 'Transport'
     },
     activities: {
       title: 'Activities',
-      sections: [
-        {
-          id: 'welcome',
-          title: 'Welcome',
-          body: "We're so happy you're coming to celebrate with us. For some of you, this may be your first time visiting La Ville Rose. There's plenty to explore while you're here and so we've lined up some money-can't-buy experiences!"
-        },
-        {
-          id: 'special-tours',
-          title: 'Special Tours',
-          body: "Caroline's father - who spent many years leading the development of Airbus aircraft - has offered to lead a tour of the Airbus A321 Final Assembly Line (provisionally penciled in for Weds 27th May), and Caroline's brother (our resident historian) has offered to give a tour of the historic quarter of Toulouse (provisionally penciled in for Thurs 28th May). If you'd be interested in joining us for one or both of these please let us know in the RSVP."
-        },
-        {
-          id: 'explore',
-          title: 'Explore at Your Pace',
-          body: "If you're staying a little longer (or even just passing through), the document below gathers some ideas we have to help you enjoy Toulouse and the surrounding region at your own pace. Nothing here is a must-do – think of this as a menu of possibilities to pick from depending on your mood, the weather, and your energy levels. We are always on hand to offer further information on anything - bonjour@aidancaroline2026.fr" 
-        }
-      ],
+      body: 'Welcome! \n\n We’re so happy you’re coming to celebrate with us. For some of you, this may be your first time visiting La Ville Rose. There’s plenty to explore while you’re here and so we’ve lined up some money-can’t-buy experiences! \n\n Caroline’s father - who spent many years leading the development of Airbus aircraft - has offered to lead a tour of the Airbus A321 Final Assembly Line (provisionally penciled in for Weds 27th May), and Caroline’s brother (our resident historian) has offered to give a tour of the historic quarter of Toulouse (provisionally penciled in for Thurs 28th May). If you’d be interested in joining us for one or both of these please let us know in the RSVP. \n\nIf you’re staying a little longer (or even just passing through), the document below gathers some ideas we have to help you enjoy Toulouse and the surrounding region at your own pace. Nothing here is a must‑do — think of this as a menu of possibilities to pick from depending on your mood, the weather, and your energy levels. We are always on hand to offer further information on anything - bonjour@aidancaroline2026.fr',
       label: 'Activities'
     },
     venue: {
       title: 'The Big Day',
-      sections: [
-        {
-          id: 'location',
-          title: 'Location',
-          body: "The ceremony and reception will be held together at the Château and in its gardens. It will be a relaxed day, so feel free to dress smart casual."
-        },
-        {
-          id: 'timetable',
-          title: 'Timetable',
-          body: "The anticipated timetable is as follows:\n• 2pm - Arrival\n• 2.30pm - Ceremony\n• 3pm - Refreshments & Games\n• 4pm - Cocktail Reception\n• 7pm - Dinner\n• Party 'til late"
-        }
-      ],
+      body: 'The ceremony and reception will be held together at the Château and in its gardens. It will be a relaxed day, so feel free to dress smart casual. The anticipaed timetable is as follows:\n•  2pm - Arrival\n•  2.30pm - Ceremony\n•  3pm - Refreshments & Games \n•  4pm - Cocktail Reception\n•  7pm - Dinner\n•  Party ’til late',
       label: 'The Big Day'
     }
   },
   fr: {
     accommodation: {
       title: 'Hébergement',
-      sections: [
-        {
-          id: 'overview',
-          title: 'Aperçu',
-          body: 'Nous recommandons ces charmants hôtels : Hôtel du Parc et B&B au bord de la rivière. Un service de navette est disponible depuis la gare pour faciliter votre voyage.'
-        },
-        {
-          id: 'options',
-          title: 'Options',
-          body: 'L\'Hôtel du Parc propose des chambres élégantes avec vue sur la place historique, tandis que le B&B au bord de la rivière offre une retraite paisible avec accès direct aux sentiers de promenade.\n\nLes deux options sont à 10 minutes du lieu de réception, et notre service de navette gratuit circule toutes les 30 minutes de 14h à minuit le jour du mariage.'
-        }
-      ],
+      body: 'Nous recommandons ces charmants hôtels : Hôtel du Parc et B&B au bord de la rivière. Un service de navette est disponible depuis la gare pour faciliter votre voyage.\n\nL\'Hôtel du Parc propose des chambres élégantes avec vue sur la place historique, tandis que le B&B au bord de la rivière offre une retraite paisible avec accès direct aux sentiers de promenade.\n\nLes deux options sont à 10 minutes du lieu de réception, et notre service de navette gratuit circule toutes les 30 minutes de 14h à minuit le jour du mariage.',
       label: 'Hébergement'
     },
     transport: {
       title: 'Transport',
-      sections: [
-        {
-          id: 'shuttles',
-          title: 'Navettes',
-          body: 'Des navettes circuleront régulièrement depuis le centre-ville. Nous encourageons le covoiturage pour réduire notre impact environnemental.'
-        },
-        {
-          id: 'schedule',
-          title: 'Horaires',
-          body: 'Horaires des navettes :\n• Départ de la Gare Centrale : Toutes les 30 minutes à partir de 14h00\n• Service de retour : Toutes les 30 minutes jusqu\'à 1h00\n• Point de rencontre : Entrée principale, Quai 1\n\nPour ceux qui viennent en voiture, un parking est disponible sur place. Nous encourageons les invités à organiser du covoiturage via notre groupe WhatsApp.'
-        }
-      ],
+      body: 'Des navettes circuleront régulièrement depuis le centre-ville. Nous encourageons le covoiturage pour réduire notre impact environnemental.\n\nHoraires des navettes :\n• Départ de la Gare Centrale : Toutes les 30 minutes à partir de 14h00\n• Service de retour : Toutes les 30 minutes jusqu\'à 1h00\n• Point de rencontre : Entrée principale, Quai 1\n\nPour ceux qui viennent en voiture, un parking est disponible sur place. Nous encourageons les invités à organiser du covoiturage via notre groupe WhatsApp.',
       label: 'Transport'
     },
     activities: {
       title: 'Activités',
-      sections: [
-        {
-          id: 'vineyard',
-          title: 'Visite du Vignoble',
-          body: 'Rejoignez-nous pour une visite guidée du vignoble, une dégustation de vins et un délicieux pique-nique au bord de la rivière le samedi après-midi.'
-        },
-        {
-          id: 'programme',
-          title: 'Programme',
-          body: 'Programme :\n• 14h00 - Visite guidée du vignoble avec notre sommelier\n• 15h30 - Dégustation de vins locaux\n• 17h00 - Pique-nique au bord de la rivière avec spécialités régionales\n\nVeuillez indiquer votre intérêt dans le formulaire de RSVP. Chaussures de marche confortables recommandées !'
-        }
-      ],
+      body: 'Rejoignez-nous pour une visite guidée du vignoble, une dégustation de vins et un délicieux pique-nique au bord de la rivière le samedi après-midi.\n\nProgramme :\n• 14h00 - Visite guidée du vignoble avec notre sommelier\n• 15h30 - Dégustation de vins locaux\n• 17h00 - Pique-nique au bord de la rivière avec spécialités régionales\n\nVeuillez indiquer votre intérêt dans le formulaire de RSVP. Chaussures de marche confortables recommandées !',
       label: 'Activités'
     },
     venue: {
-      title: 'Le Grand Jour',
-      sections: [
-        {
-          id: 'ceremony',
-          title: 'Cérémonie',
-          body: 'La cérémonie aura lieu dans les jardins historiques du Château, suivie d\'un dîner et d\'une soirée dansante dans la Grande Salle.'
-        },
-        {
-          id: 'highlights',
-          title: 'Points Forts',
-          body: 'Points forts du lieu :\n• Cérémonie : Terrasse du jardin surplombant la vallée (16h00)\n• Cocktail : Roseraie (17h00)\n• Dîner : Grande Salle avec lustres en cristal (19h00)\n• Bal : Salle de bal avec orchestre live (à partir de 21h00)\n\nLe château date du 17ème siècle et offre une architecture magnifique et des vues à couper le souffle.'
-        }
-      ],
+      title: 'Lieu',
+      body: 'La cérémonie aura lieu dans les jardins historiques du Château, suivie d\'un dîner et d\'une soirée dansante dans la Grande Salle.\n\nPoints forts du lieu :\n• Cérémonie : Terrasse du jardin surplombant la vallée (16h00)\n• Cocktail : Roseraie (17h00)\n• Dîner : Grande Salle avec lustres en cristal (19h00)\n• Bal : Salle de bal avec orchestre live (à partir de 21h00)\n\nLe château date du 17ème siècle et offre une architecture magnifique et des vues à couper le souffle.',
       label: 'Le Grand Jour'
     }
   }
@@ -214,7 +116,6 @@ export default function App() {
       iconElement.style.left = `${x}px`
       iconElement.style.top = `${y}px`
       iconElement.style.display = visible ? 'flex' : 'none'
-      iconElement.style.transform = 'translate(-50%, -50%)'
     })
   }
 
@@ -537,14 +438,13 @@ export default function App() {
       {Object.keys(infoData).map(name => {
         const Icon = infoData[name].icon
         return (
-          <div 
-            key={name} 
-            ref={el => iconRefs.current[name] = el}
-            style={{ position: 'fixed', left: 0, top: 0, display: 'none', zIndex: 100, transform: 'translate(-50%, -50%)' }}
-          >
+          <div key={name} style={{ position: 'fixed', left: 0, top: 0, display: 'none', zIndex: 100 }}>
             <div 
+              ref={el => iconRefs.current[name] = el?.parentElement} 
               onClick={() => handleIconClick(name)}
               style={{ 
+                position: 'absolute',
+                transform: 'translate(-50%, -50%)', 
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -601,13 +501,13 @@ export default function App() {
 
       {activeInfo && (
         <div style={{ 
-          position: 'fixed',
+          position: 'relative',
           top: '50%', 
           left: '50%', 
           transform: 'translate(-50%,-50%)', 
           width: '90%', 
           maxWidth: '700px',
-          maxHeight: '55vh',
+          maxHeight: '85vh',
           borderRadius: '16px', 
           overflow: 'hidden', 
           boxShadow: '0 20px 60px rgba(0,0,0,0.3)', 
@@ -652,115 +552,44 @@ export default function App() {
             />
             
             <div style={{ 
-              position: 'relative',
-              width: '100%',
-              maxWidth: '560px', 
-              margin: '20px auto',
-              padding: '32px 32px 96px 32px',
-              maxHeight: '30vh',
-              overflowY: 'auto',
-              opacity: fadeProgress >= 0.95 ? 1 : 0,
-              transition: fadeProgress >= 0.95 ? 'opacity 0.3s ease-in 0.1s' : 'none',
-              zIndex: 1,
-              color: '#616060',
-              // textShadow: '0 2px 10px rgba(0,0,0,0.6)',
-              fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif'
-            }}>
-              <h2 style={{ margin: '20px 20px 20px 20px', fontSize: '28px' }}>
-                {currentContent[activeInfo.name].title}
-              </h2>
-              
-              {/* Section Navigation */}
-              <div style={{ 
-                display: 'flex', 
-                gap: '12px', 
-                flexWrap: 'wrap',
-                marginBottom: '24px',
-                paddingBottom: '16px',
-                borderBottom: '2px solid rgba(255,255,255,0.3)'
-              }}>
-                {currentContent[activeInfo.name].sections.map((section) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    style={{
-                      padding: '8px 16px',
-                      background: 'rgba(255,255,255,0.2)',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.3)',
-                      borderRadius: '20px',
-                      color: '#1a1a1a',
-                      textDecoration: 'none',
-                      fontSize: '14px',
-                      fontWeight: '500',
-                      transition: 'all 0.2s',
-                      cursor: 'pointer'
-                    }}
-                    onMouseOver={(e) => {
-                      e.target.style.background = 'rgba(255,255,255,0.35)'
-                      e.target.style.transform = 'translateY(-1px)'
-                    }}
-                    onMouseOut={(e) => {
-                      e.target.style.background = 'rgba(255,255,255,0.2)'
-                      e.target.style.transform = 'translateY(0)'
-                    }}
-                  >
-                    {section.title}
-                  </a>
-                ))}
-              </div>
-
-              {/* Sections */}
-              {currentContent[activeInfo.name].sections.map((section, index) => (
-                <div 
-                  key={section.id} 
-                  id={section.id}
-                  style={{ 
-                    marginBottom: index < currentContent[activeInfo.name].sections.length - 1 ? '32px' : '0',
-                    scrollMarginTop: '20px'
-                  }}
-                >
-                  <h3 style={{ 
-                    margin: '0 0 0 30px', 
-                    fontSize: '20px',
-                    fontWeight: '600'
-                  }}>
-                    {section.title}
-                  </h3>
-                  <p style={{ 
-                    margin: '0 0 0 30px', 
-                    lineHeight: '1.8', 
-                    fontSize: '16px',
-                    whiteSpace: 'pre-line'
-                  }}>
-                    {section.body}
-                  </p>
-
-
-                  {activeInfo.name === 'venue' && section.id === 'location' && (
-      <div
-        style={{
-          marginTop: '20px',
-          borderRadius: '12px',
-          overflow: 'hidden',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.25)'
-        }}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d45980.013678711366!2d1.3437759!3d43.923132!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac05218106794b%3A0x657f83656e4c311e!2sCh%C3%A2teau%20Saint%20Louis!5e0!3m2!1sen!2sfr!4v1769022090276!5m2!1sen!2sfr"
-          width="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-                  )}
-
-                </div>
-              ))}
-            </div>
-        </div>
+                      position: 'relative',
+                      maxWidth: '520px', 
+                      margin: '0 auto',
+                      padding: '32px', 
+                      maxHeight: 'clamp(320px, 60vh, 520px)',
+                      overflowY: 'auto',
+                      scrollbarGutter: 'stable',  
+                      opacity: fadeProgress >= 0.95 ? 1 : 0,
+                      transition: fadeProgress >= 0.95 ? 'opacity 0.3s ease-in 0.1s' : 'none',
+                      zIndex: 1,
+                      color: '#616060',
+                      textShadow: '0 2px 10px rgba(0,0,0,0.6)'
+                    }}>
+                    <div style={{
+                      position: 'relative',
+                      maxWidth: '520px',
+                      margin: '32px auto',
+                      maxHeight: '40vh',
+                      overflowY: 'scroll',
+                      paddingRight: '8px',
+                      zIndex: 1,
+                      color: '#616060',
+                      textShadow: '0 2px 10px rgba(0,0,0,0.6)',
+                    }}>
+                      <h2 style={{ margin: '0 0 16px 0', fontSize: '28px' }}>
+                        {currentContent[activeInfo.name].title}
+                      </h2>
+                      <p style={{ 
+                        margin: 0, 
+                        lineHeight: '1.8', 
+                        fontSize: '16px',
+                        whiteSpace: 'pre-line'
+                      }}>
+                        {currentContent[activeInfo.name].body}
+                      </p>
+                    </div>
+                  </div>
+                  </div>
       )}
 
       {showRSVPForm && (
@@ -920,7 +749,7 @@ export default function App() {
       )}
 
       {(activeInfo || showRSVPForm || showGiftRegistry) && (
-        <div onClick={() => { setActiveInfo(null); setShowRSVPForm(false); setShowGiftRegistry(false) }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 999 }} />
+        <div onClick={() => { setActiveInfo(null); setGifFinished(false); setShowRSVPForm(false); setShowGiftRegistry(false) }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 999 }} />
       )}
 
       <div style={{ position: 'fixed', bottom: '80px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '16px', zIndex: 100 }}>
@@ -935,7 +764,7 @@ export default function App() {
       {modelLoading && (
         <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', textAlign: 'center', zIndex: 1000 }}>
           <div style={{ width: '60px', height: '60px', border: '4px solid rgba(255,255,255,0.3)', borderTop: '4px solid white', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 16px' }} />
-          <p style={{ color: 'white', fontSize: '16px', fontWeight: '500', margin: 0 }}>Loading ...</p>
+          <p style={{ color: 'white', fontSize: '16px', fontWeight: '500', margin: 0 }}>Loading model...</p>
           <style>{`
             @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
             @keyframes pulsate { 
