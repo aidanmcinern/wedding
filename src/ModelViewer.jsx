@@ -737,7 +737,7 @@ export default function App() {
                   </p>
 
 
-                  {activeInfo.name === 'venue' && section.id === 'location' && (
+                  {activeInfo.name === 'transport' && section.id === 'getting-to-venue' && (
       <div
         style={{
           marginTop: '20px',
