@@ -60,7 +60,7 @@ const content = {
         {
           id: 'explore',
           title: 'Explore at Your Pace',
-          body: "If you're staying a little longer (or even just passing through), the document below gathers some ideas we have to help you enjoy Toulouse and the surrounding region at your own pace. Nothing here is a must-do – think of this as a menu of possibilities to pick from depending on your mood, the weather, and your energy levels. We are always on hand to offer further information on anything - bonjour@aidancaroline2026.fr" 
+          body: "If you're staying a little longer (or even just passing through), the document below gathers some ideas we have to help you enjoy Toulouse and the surrounding region at your own pace. Nothing here is a must-do – think of this as a menu of possibilities to pick from depending on your mood, the weather, and your energy levels. \n\n EN: <a href='https://tinylink.net/IbGYB' target='_blank' rel='noopener noreferrer' style='color: #1a1a1a; text-decoration: underline;'>Toulouse Travel Guide.pdf</a>\n\nWe are always on hand to offer further information on anything - bonjour@aidancaroline2026.fr" 
         }
       ],
       label: 'Activities'
@@ -732,9 +732,10 @@ export default function App() {
                     lineHeight: '1.8', 
                     fontSize: '16px',
                     whiteSpace: 'pre-line'
-                  }}>
-                    {section.body}
-                  </p>
+                    
+                  }}
+                  dangerouslySetInnerHTML={{ __html: section.body }}
+                  />
 
 
                   {activeInfo.name === 'transport' && section.id === 'getting-to-venue' && (
