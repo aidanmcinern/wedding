@@ -4,7 +4,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { BedDouble, Plane, PartyPopper, MapPin } from 'lucide-react'
 
-// Content translations - easily extendable for multiple languages
 const content = {
   en: {
     accommodation: {
@@ -34,7 +33,7 @@ const content = {
         {
           id: 'other-airports',
           title: 'Other Airports',
-          body: "If you're planning to turn your trip into a longer holiday, there are several other airports within easy reach of Toulouse that you may find useful:\n• Carcassonne Airport – approx. 1.5 hours by train\n• Tarbes–Lourdes–Pyrénées Airport – approx. 2 hours by train\n• Bordeaux Airport – approx. 3.5 hours by train\n• Biarritz Airport – approx. 4 hours by train"
+          body: "If you're planning to turn your trip into a longer holiday, there are several other airports within easy reach of Toulouse that you may find useful:\n• Carcassonne Airport – approx. 1.5 hours by train\n• Tarbes—Lourdes—Pyrénées Airport – approx. 2 hours by train\n• Bordeaux Airport – approx. 3.5 hours by train\n• Biarritz Airport – approx. 4 hours by train"
         },
         {
           id: 'getting-to-venue',
@@ -80,6 +79,49 @@ const content = {
         }
       ],
       label: 'The Big Day'
+    },
+    rsvp: {
+      title: 'RSVP',
+      searchPrompt: 'Please enter your full name.',
+      searchPlaceholder: 'e.g., Aidan Mcinerney',
+      searchButton: 'Search',
+      searching: 'Searching...',
+      foundGuests: 'Found {count} guest{plural} in your party. Please contact us at bonjour@aidancaroline2026.fr if something doesn\'t look correct.',
+      allAttending: 'All Attending',
+      allDeclining: 'All Declining',
+      allAirbus: 'All Airbus/Walk',
+      allShuttle: 'All Need Shuttle',
+      tableHeaders: {
+        name: 'Name',
+        attending: 'Will be attending',
+        menu: 'Menu Selection',
+        dietary: 'Dietary Requirements',
+        airbus: 'Airbus Tour / Walk Interest',
+        shuttle: 'Will Require Shuttle'
+      },
+      menuOptions: {
+        select: 'Select...',
+        duck: 'Roasted Duck Breast',
+        fish: 'Roasted Cod Loin',
+        tart: 'Grilled Vegetable Tart (v)',
+        kid: 'Children\'s Menu',
+        kidv: 'Children\'s Menu (v)'
+      },
+      dietaryPlaceholder: 'Optional',
+      backButton: 'Back',
+      submitButton: 'Submit RSVP',
+      submitting: 'Submitting...',
+      selectMealError: 'Please select a meal preference for all attending guests',
+      submitSuccess: 'Thank you for your RSVP! It has been carefully noted :)',
+      nameRequired: 'Please enter a name'
+    },
+    giftRegistry: {
+      title: 'Gift Registry',
+      description: 'Your presence on our special day is the greatest gift we could ask for. We are very fortunate to already have many of the essentials for our home. If you wish to mark the occasion with a gift, we have made a selection of pieces, available through the link below. Our bank details are also shared below for anyone who prefers to make a transfer.',
+      visitRegistry: 'Visit Our Online Registry →',
+      or: '— or —',
+      bankTransfer: 'Bank Transfer (IBAN)',
+      accountName: 'Account Name: Caroline Ribere'
     }
   },
   fr: {
@@ -88,13 +130,13 @@ const content = {
       sections: [
         {
           id: 'overview',
-          title: 'Aperçu',
-          body: 'Nous recommandons ces charmants hôtels : Hôtel du Parc et B&B au bord de la rivière. Un service de navette est disponible depuis la gare pour faciliter votre voyage.'
+          title: 'Vue dI\'ensemble',
+          body: 'Toulouse regorge dI\'excellents hôtels et dI\'Airbnb adaptés à tous les styles et tous les budgets. Nous vous recommandons de séjourner dans le centre-ville ou à proximité, afin dI\'être proches des restaurants, cafés, boutiques et transports.'
         },
         {
           id: 'options',
-          title: 'Options',
-          body: 'L\'Hôtel du Parc propose des chambres élégantes avec vue sur la place historique, tandis que le B&B au bord de la rivière offre une retraite paisible avec accès direct aux sentiers de promenade.\n\nLes deux options sont à 10 minutes du lieu de réception, et notre service de navette gratuit circule toutes les 30 minutes de 14h à minuit le jour du mariage.'
+          title: 'Quartiers recommandés',
+          body: 'Voici quelques quartiers que vous pourriez envisager:\n• entre historique (Capitole / Carmes) – belle architecture, tout se fait à pied\n• Saint-Étienne – plus calme mais central, proche des parcs et musées\n• Saint-Cyprien – décontracté, juste de lI\'autre côté de la Garonne, avec dI\'excellentes adresses gourmandes.'
         }
       ],
       label: 'Hébergement'
@@ -103,14 +145,19 @@ const content = {
       title: 'Transport',
       sections: [
         {
-          id: 'shuttles',
-          title: 'Navettes',
-          body: 'Des navettes circuleront régulièrement depuis le centre-ville. Nous encourageons le covoiturage pour réduire notre impact environnemental.'
+          id: 'getting-to-toulouse',
+          title: 'Se rendre à Toulouse',
+          body: "L'aéroport de Toulouse-Blagnac (TLS) est le principal aéroport desservant la ville. Depuis l'aéroport, une navette circule toutes les 15 minutes et vous permettra d'accéder directement au centre-ville. Des taxis et des Uber sont également facilement disponibles, et plusieurs agences de location de voitures se trouvent à côté du terminal si vous préférez conduire."
         },
         {
-          id: 'schedule',
-          title: 'Horaires',
-          body: 'Horaires des navettes :\n• Départ de la Gare Centrale : Toutes les 30 minutes à partir de 14h00\n• Service de retour : Toutes les 30 minutes jusqu\'à 1h00\n• Point de rencontre : Entrée principale, Quai 1\n\nPour ceux qui viennent en voiture, un parking est disponible sur place. Nous encourageons les invités à organiser du covoiturage via notre groupe WhatsApp.'
+          id: 'other-airports',
+          title: 'Autres aéroports',
+          body: "Si vous envisagez de prolonger votre séjour pour en faire de véritables vacances, plusieurs autres aéroports facilement accessibles depuis Toulouse pourraient vous être utiles :\n• Aéroport de Carcassonne – environ 1h30 en train\n• Aéroport de Tarbes—Lourdes—Pyrénées – environ 2h en train\n• Aéroport de Bordeaux – environ 3h30 en train\n• Aéroport de Biarritz – environ 4h en train"
+        },
+        {
+          id: 'getting-to-venue',
+          title: 'Se rendre au lieu de réception',
+          body: "Le Château Saint Louis se situe à environ 40 minutes au nord de Toulouse en voiture. Un grand parking est disponible sur place si vous choisissez de venir en voiture.\n\nNous avons également prévu une navette circulant toutes les heures entre le centre de Toulouse (Allées Jean-Jaurès) et le lieu de réception. Si vous prévoyez d'utiliser la navette, merci de nous en informer à l'avance via le RSVP afin que nous puissions prévoir la capacité nécessaire."
         }
       ],
       label: 'Transport'
@@ -119,14 +166,19 @@ const content = {
       title: 'Activités',
       sections: [
         {
-          id: 'vineyard',
-          title: 'Visite du Vignoble',
-          body: 'Rejoignez-nous pour une visite guidée du vignoble, une dégustation de vins et un délicieux pique-nique au bord de la rivière le samedi après-midi.'
+          id: 'welcome',
+          title: 'Bienvenue',
+          body: "Nous sommes ravis que vous veniez célébrer ce moment avec nous. Pour certains d'entre vous, ce sera peut-être une première visite dans la Ville Rose. Il y a tant de choses à découvrir, et nous avons donc prévu quelques expériences vraiment uniques !"
         },
         {
-          id: 'programme',
-          title: 'Programme',
-          body: 'Programme :\n• 14h00 - Visite guidée du vignoble avec notre sommelier\n• 15h30 - Dégustation de vins locaux\n• 17h00 - Pique-nique au bord de la rivière avec spécialités régionales\n\nVeuillez indiquer votre intérêt dans le formulaire de RSVP. Chaussures de marche confortables recommandées !'
+          id: 'special-tours',
+          title: 'Visites spéciales',
+          body: "Le père de Caroline – qui a passé de nombreuses années à diriger le développement des avions Airbus – a proposé de guider une visite de la chaîne d'assemblage final de l'Airbus A321 (provisoirement prévue le mercredi 27 mai).\n\n Le frère de Caroline (notre historien attitré) a quant à lui proposé une visite du quartier historique de Toulouse (provisoirement prévue le jeudi 28 mai).\n\nSi l'une ou l'autre (ou les deux) de ces visites vous intéresse, merci de nous le faire savoir dans le RSVP."
+        },
+        {
+          id: 'explore',
+          title: 'Explorer à votre rythme',
+          body: "Si vous restez un peu plus longtemps (ou même si vous êtes simplement de passage), le document ci-dessous rassemble quelques idées pour profiter de Toulouse et de la région environnante à votre rythme. Rien n'est obligatoire – voyez cela comme un menu de possibilités à choisir selon votre humeur, la météo et vos envies. \n\n EN: <a href='https://tinylink.net/IbGYB' target='_blank' rel='noopener noreferrer' style='color: #1a1a1a; text-decoration: underline;'>Toulouse Travel Guide.pdf</a>\n\nNous restons bien entendu à votre disposition pour toute information complémentaire : bonjour@aidancaroline2026.fr" 
         }
       ],
       label: 'Activités'
@@ -136,16 +188,59 @@ const content = {
       sections: [
         {
           id: 'ceremony',
-          title: 'Cérémonie',
-          body: 'La cérémonie aura lieu dans les jardins historiques du Château, suivie d\'un dîner et d\'une soirée dansante dans la Grande Salle.'
+          title: 'Lieu',
+          body: 'La cérémonie et la réception auront tous les deux lieu au Château et dans ses jardins. La journée se veut détendue, nI\'hésitez donc pas à adopter une tenue smart casual.'
         },
         {
           id: 'highlights',
-          title: 'Points Forts',
-          body: 'Points forts du lieu :\n• Cérémonie : Terrasse du jardin surplombant la vallée (16h00)\n• Cocktail : Roseraie (17h00)\n• Dîner : Grande Salle avec lustres en cristal (19h00)\n• Bal : Salle de bal avec orchestre live (à partir de 21h00)\n\nLe château date du 17ème siècle et offre une architecture magnifique et des vues à couper le souffle.'
+          title: 'Programme',
+          body: 'Le programme prévisionnel est le suivant :\n• 14h00 – Arrivée\n• 14h30 – Cérémonie\n• 15h00 – Rafraîchissements & jeux\n• 16h00 – Cocktail\n• 19h00 – Dîner\n• Soirée jusquI\'au bout de la nuit !'
         }
       ],
       label: 'Le Grand Jour'
+    },
+    rsvp: {
+      title: 'RSVP',
+      searchPrompt: 'Veuillez entrer votre nom complet.',
+      searchPlaceholder: 'ex., Aidan Mcinerney',
+      searchButton: 'Rechercher',
+      searching: 'Recherche...',
+      foundGuests: '{count} invité{plural} trouvé{plural} dans votre groupe. Veuillez nous contacter à bonjour@aidancaroline2026.fr si quelque chose est incorrect.',
+      allAttending: 'Tous présents',
+      allDeclining: 'Tous absents',
+      allAirbus: 'Tous Airbus/Visite',
+      allShuttle: 'Tous navette',
+      tableHeaders: {
+        name: 'Nom',
+        attending: 'Sera présent',
+        menu: 'Sélection menu',
+        dietary: 'Préférences alimentaires',
+        airbus: 'Intéressés par les visites guidées Airbus/Histoire',
+        shuttle: 'Aura besoin de la navette'
+      },
+      menuOptions: {
+        select: 'Sélectionner...',
+        duck: 'Magret de canard rôti',
+        fish: 'Filet de cabillaud rôti',
+        tart: 'Tarte aux légumes grillés (v)',
+        kid: 'Menu enfant',
+        kidv: 'Menu enfant (v)'
+      },
+      dietaryPlaceholder: 'Optionnel',
+      backButton: 'Retour',
+      submitButton: 'Envoyer RSVP',
+      submitting: 'Envoi...',
+      selectMealError: 'Veuillez sélectionner un menu pour tous les invités présents',
+      submitSuccess: 'Merci pour votre RSVP ! Il a été soigneusement noté :)',
+      nameRequired: 'Veuillez entrer un nom'
+    },
+    giftRegistry: {
+      title: 'Liste de mariage',
+      description: 'Votre présence à nos côtés pour célébrer ce jour est le plus beau des cadeaux. Nous sommes très chanceux d’avoir déjà l’essentiel pour notre maison. Si vous souhaitez marquer l’occasion par une attention, nous avons sélectionné quelques pièces que vous pouvez découvrir via le lien ci-dessous.\n\nPour celles et ceux qui souhaiteraient contribuer autrement, une urne sera mise à disposition le jour J. Nos coordonnées bancaires sont également partagées ci-dessous pour les personnes préférant effectuer un virement.',
+      visitRegistry: 'Visiter notre liste en ligne →',
+      or: '— ou —',
+      bankTransfer: 'Virement bancaire (IBAN)',
+      accountName: 'Titulaire du compte : Caroline Ribere'
     }
   }
 }
@@ -166,6 +261,7 @@ export default function App() {
   const [modelLoading, setModelLoading] = useState(true)
   const [pulseTime, setPulseTime] = useState(0)
   const [language, setLanguage] = useState('en')
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
   
   const [rsvpStep, setRsvpStep] = useState('search')
   const [searchName, setSearchName] = useState('')
@@ -200,6 +296,14 @@ export default function App() {
       gifDuration: 5300
     }
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const updateIconPositions = () => {
     if (!cameraRef.current || markersRef.current.length === 0) return
@@ -385,12 +489,12 @@ export default function App() {
   }, [activeInfo])
 
   const handleIconClick = (name) => {
-    setActiveInfo({ ...infoData[name], name })
+    setActiveInfo({ ...infoData[name], name, timestamp: Date.now() })
   }
 
   const handleSearchGuest = async () => {
     if (!searchName.trim()) {
-      setSearchError('Please enter a name')
+      setSearchError(content[language].rsvp.nameRequired)
       return
     }
 
@@ -438,7 +542,7 @@ export default function App() {
   const handleRSVPSubmit = async () => {
     const invalidGuests = guestParty.filter(g => g.attending && !g.mealPreference)
     if (invalidGuests.length > 0) {
-      alert('Please select a meal preference for all attending guests')
+      alert(content[language].rsvp.selectMealError)
       return
     }
     
@@ -461,7 +565,7 @@ export default function App() {
         return
       }
 
-      alert('Thank you for your RSVP! It has been carefully noted :)')
+      alert(content[language].rsvp.submitSuccess)
       setShowRSVPForm(false)
       setRsvpStep('search')
       setSearchName('')
@@ -490,18 +594,29 @@ export default function App() {
     <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0, overflow: 'hidden', position: 'relative' }}>
       <div ref={mountRef} style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }} />
 
-      <img src="/banner.png" alt="Wedding Logo" style={{ position: 'fixed', top: '20px', left: '20px', width: '15%', height: 'auto', zIndex: 200 }} />
+      <img 
+        src={language === 'en' ? '/banner_en.png' : '/banner_fr.png'} 
+        alt="Wedding Logo" 
+        style={{ 
+          position: 'fixed', 
+          top: isMobile ? '10px' : '20px', 
+          left: isMobile ? '10px' : '20px', 
+          width: isMobile ? '35%' : '15%', 
+          height: 'auto', 
+          zIndex: 200,
+          maxWidth: '200px'
+        }} 
+      />
 
-      {/* Language Toggle */}
-      <div style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 200, display: 'flex', gap: '8px' }}>
+      <div style={{ position: 'fixed', top: isMobile ? '10px' : '20px', right: isMobile ? '10px' : '20px', zIndex: 200, display: 'flex', gap: '8px' }}>
         <button 
           onClick={() => setLanguage('en')}
           style={{ 
-            padding: '10px 16px', 
+            padding: isMobile ? '8px 12px' : '10px 16px', 
             background: language === 'en' ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.6)', 
             border: '2px solid rgba(0,0,0,0.1)', 
             borderRadius: '20px', 
-            fontSize: '14px', 
+            fontSize: isMobile ? '12px' : '14px', 
             fontWeight: '600', 
             color: '#1a1a1a', 
             cursor: 'pointer', 
@@ -516,11 +631,11 @@ export default function App() {
         <button 
           onClick={() => setLanguage('fr')}
           style={{ 
-            padding: '10px 16px', 
+            padding: isMobile ? '8px 12px' : '10px 16px', 
             background: language === 'fr' ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.6)', 
             border: '2px solid rgba(0,0,0,0.1)', 
             borderRadius: '20px', 
-            fontSize: '14px', 
+            fontSize: isMobile ? '12px' : '14px', 
             fontWeight: '600', 
             color: '#1a1a1a', 
             cursor: 'pointer', 
@@ -548,14 +663,14 @@ export default function App() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '8px',
+                gap: isMobile ? '4px' : '8px',
                 cursor: 'pointer'
               }}
             >
               <div
                 style={{ 
-                  width: '60px', 
-                  height: '60px', 
+                  width: isMobile ? '50px' : '60px', 
+                  height: isMobile ? '50px' : '60px', 
                   borderRadius: '50%', 
                   background: 'rgba(255,255,255,0.12)', 
                   backdropFilter: 'blur(10px)', 
@@ -577,11 +692,11 @@ export default function App() {
                   e.currentTarget.style.animationPlayState = 'running' 
                 }}
               >
-                <Icon size={28} strokeWidth={2} style={{ color: '#1a1a1a' }} />
+                <Icon size={isMobile ? 24 : 28} strokeWidth={2} style={{ color: '#1a1a1a' }} />
               </div>
               <div style={{
                   fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif',
-                  fontSize: '13px',
+                  fontSize: isMobile ? '11px' : '13px',
                   fontWeight: '500',
                   color: 'rgba(255,255,255,0.75)',
                   letterSpacing: '0.09em',
@@ -605,9 +720,9 @@ export default function App() {
           top: '50%', 
           left: '50%', 
           transform: 'translate(-50%,-50%)', 
-          width: '90%', 
+          width: isMobile ? '95%' : '90%', 
           maxWidth: '700px',
-          maxHeight: '55vh',
+          maxHeight: isMobile ? '80vh' : '55vh',
           borderRadius: '16px', 
           overflow: 'hidden', 
           boxShadow: '0 20px 60px rgba(0,0,0,0.3)', 
@@ -621,7 +736,7 @@ export default function App() {
               onMouseOut={(e) => e.target.style.background = 'rgba(0,0,0,0.5)'}>×</button>
             
             <img 
-              src={activeInfo.gif} 
+              src={`${activeInfo.gif}?t=${activeInfo.timestamp}`}
               alt={currentContent[activeInfo.name].title}
               style={{ 
                 position: 'absolute',
@@ -654,29 +769,27 @@ export default function App() {
             <div style={{ 
               position: 'relative',
               width: '100%',
-              maxWidth: '560px', 
-              margin: '20px auto',
-              padding: '32px 32px 96px 32px',
-              maxHeight: '30vh',
+              maxWidth: isMobile ? '100%' : '560px', 
+              margin: isMobile ? '15px auto' : '20px auto',
+              padding: isMobile ? '24px 20px 80px 20px' : '32px 32px 96px 32px',
+              maxHeight: isMobile ? '65vh' : '30vh',
               overflowY: 'auto',
               opacity: fadeProgress >= 0.95 ? 1 : 0,
               transition: fadeProgress >= 0.95 ? 'opacity 0.3s ease-in 0.1s' : 'none',
               zIndex: 1,
               color: '#616060',
-              // textShadow: '0 2px 10px rgba(0,0,0,0.6)',
               fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif'
             }}>
-              <h2 style={{ margin: '20px 20px 20px 20px', fontSize: '28px' }}>
+              <h2 style={{ margin: isMobile ? '10px 10px 15px 10px' : '20px 20px 20px 20px', fontSize: isMobile ? '22px' : '28px' }}>
                 {currentContent[activeInfo.name].title}
               </h2>
               
-              {/* Section Navigation */}
               <div style={{ 
                 display: 'flex', 
-                gap: '12px', 
+                gap: isMobile ? '8px' : '12px', 
                 flexWrap: 'wrap',
-                marginBottom: '24px',
-                paddingBottom: '16px',
+                marginBottom: isMobile ? '16px' : '24px',
+                paddingBottom: isMobile ? '12px' : '16px',
                 borderBottom: '2px solid rgba(255,255,255,0.3)'
               }}>
                 {currentContent[activeInfo.name].sections.map((section) => (
@@ -684,14 +797,14 @@ export default function App() {
                     key={section.id}
                     href={`#${section.id}`}
                     style={{
-                      padding: '8px 16px',
+                      padding: isMobile ? '6px 12px' : '8px 16px',
                       background: 'rgba(255,255,255,0.2)',
                       backdropFilter: 'blur(10px)',
                       border: '1px solid rgba(255,255,255,0.3)',
                       borderRadius: '20px',
                       color: '#1a1a1a',
                       textDecoration: 'none',
-                      fontSize: '14px',
+                      fontSize: isMobile ? '12px' : '14px',
                       fontWeight: '500',
                       transition: 'all 0.2s',
                       cursor: 'pointer'
@@ -710,54 +823,54 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Sections */}
               {currentContent[activeInfo.name].sections.map((section, index) => (
                 <div 
                   key={section.id} 
                   id={section.id}
                   style={{ 
-                    marginBottom: index < currentContent[activeInfo.name].sections.length - 1 ? '32px' : '0',
+                    marginBottom: index < currentContent[activeInfo.name].sections.length - 1 ? isMobile ? '24px' : '32px' : '0',
                     scrollMarginTop: '20px'
                   }}
                 >
                   <h3 style={{ 
-                    margin: '0 0 0 30px', 
-                    fontSize: '20px',
+                    margin: isMobile ? '0 0 8px 15px' : '0 0 0 30px', 
+                    fontSize: isMobile ? '17px' : '20px',
                     fontWeight: '600'
                   }}>
                     {section.title}
                   </h3>
                   <p style={{ 
-                    margin: '0 0 0 30px', 
+                    margin: isMobile ? '0 0 0 15px' : '0 0 0 30px', 
                     lineHeight: '1.8', 
-                    fontSize: '16px',
+                    fontSize: isMobile ? '14px' : '16px',
                     whiteSpace: 'pre-line'
-                    
                   }}
                   dangerouslySetInnerHTML={{ __html: section.body }}
                   />
 
-
                   {activeInfo.name === 'transport' && section.id === 'getting-to-venue' && (
-      <div
-        style={{
-          marginTop: '20px',
-          borderRadius: '12px',
-          overflow: 'hidden',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.25)'
-        }}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d45980.013678711366!2d1.3437759!3d43.923132!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac05218106794b%3A0x657f83656e4c311e!2sCh%C3%A2teau%20Saint%20Louis!5e0!3m2!1sen!2sfr!4v1769022090276!5m2!1sen!2sfr"
-          width="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
+                    <div
+                      style={{
+                        marginTop: '20px',
+                        marginLeft: isMobile ? '15px' : '30px',
+                        marginRight: isMobile ? '15px' : '0',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+                        height: isMobile ? '250px' : '400px'
+                      }}
+                    >
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d45980.013678711366!2d1.3437759!3d43.923132!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac05218106794b%3A0x657f83656e4c311e!2sCh%C3%A2teau%20Saint%20Louis!5e0!3m2!1sen!2sfr!4v1769022090276!5m2!1sen!2sfr"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                        allowFullScreen
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
                   )}
-
                 </div>
               ))}
             </div>
@@ -765,18 +878,18 @@ export default function App() {
       )}
 
       {showRSVPForm && (
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '95%', maxWidth: '1000px', maxHeight: '90vh', overflowY: 'auto', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', zIndex: 1000 }}>
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: isMobile ? '95%' : '95%', maxWidth: '1000px', maxHeight: '90vh', overflowY: 'auto', background: 'white', borderRadius: '16px', padding: isMobile ? '24px 16px' : '32px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', zIndex: 1000 }}>
           <button onClick={() => { setShowRSVPForm(false); setRsvpStep('search'); setSearchName(''); setGuestParty([]); setSearchError('') }} 
             style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.5)', border: 'none', color: 'white', width: '36px', height: '36px', borderRadius: '50%', cursor: 'pointer', fontSize: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s' }}
             onMouseOver={(e) => e.target.style.background = 'rgba(0,0,0,0.7)'}
             onMouseOut={(e) => e.target.style.background = 'rgba(0,0,0,0.5)'}>×</button>
           
-          <h2 style={{ margin: '0 0 24px 0', fontSize: '28px', color: '#1a1a1a' }}>RSVP</h2>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: isMobile ? '24px' : '28px', color: '#1a1a1a' }}>{currentContent.rsvp.title}</h2>
           
           {rsvpStep === 'search' ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <p style={{ margin: 0, fontSize: '16px', color: '#666', lineHeight: '1.6' }}>
-                Please enter your full name.
+              <p style={{ margin: 0, fontSize: isMobile ? '14px' : '16px', color: '#666', lineHeight: '1.6' }}>
+                {currentContent.rsvp.searchPrompt}
               </p>
               <div>
                 <input
@@ -784,94 +897,97 @@ export default function App() {
                   value={searchName} 
                   onChange={(e) => { setSearchName(e.target.value); setSearchError('') }}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearchGuest()}
-                  placeholder="e.g., Aidan Mcinerney"
+                  placeholder={currentContent.rsvp.searchPlaceholder}
                   disabled={isSearching}
-                  style={{ width: '100%', padding: '12px', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', boxSizing: 'border-box', opacity: isSearching ? 0.6 : 1 }} 
+                  style={{ width: '100%', padding: isMobile ? '10px' : '12px', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: isMobile ? '14px' : '16px', boxSizing: 'border-box', opacity: isSearching ? 0.6 : 1 }} 
                 />
                 {searchError && <p style={{ margin: '8px 0 0 0', fontSize: '14px', color: '#d32f2f' }}>{searchError}</p>}
               </div>
-              <button onClick={handleSearchGuest} disabled={isSearching} style={{ marginTop: '12px', padding: '14px', background: isSearching ? '#999' : '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: isSearching ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}
+              <button onClick={handleSearchGuest} disabled={isSearching} style={{ marginTop: '12px', padding: isMobile ? '12px' : '14px', background: isSearching ? '#999' : '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: isMobile ? '14px' : '16px', fontWeight: '600', cursor: isSearching ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}
                 onMouseOver={(e) => !isSearching && (e.target.style.background = '#333')}
                 onMouseOut={(e) => !isSearching && (e.target.style.background = '#1a1a1a')}>
-                {isSearching ? 'Searching...' : 'Search'}
+                {isSearching ? currentContent.rsvp.searching : currentContent.rsvp.searchButton}
               </button>
             </div>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ padding: '16px', background: '#f8f8f8', borderRadius: '12px' }}>
-                <p style={{ margin: '0 0 12px 0', fontSize: '15px', color: '#666' }}>
-                  Found {guestParty.length} guest{guestParty.length !== 1 ? 's' : ''} in your party. Please contact us at bonjour@aidancaroline2026.fr if something doesn't look correct.
+              <div style={{ padding: isMobile ? '12px' : '16px', background: '#f8f8f8', borderRadius: '12px' }}>
+                <p style={{ margin: '0 0 12px 0', fontSize: isMobile ? '13px' : '15px', color: '#666' }}>
+                  {currentContent.rsvp.foundGuests
+                    .replace('{count}', guestParty.length)
+                    .replace('{plural}', guestParty.length !== 1 ? 's' : '')
+                  }
                 </p>
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
                   <button onClick={() => setAllGuests('attending', true)}
-                    style={{ padding: '8px 16px', background: 'white', border: '2px solid #4caf50', color: '#4caf50', borderRadius: '6px', fontSize: '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
+                    style={{ padding: isMobile ? '6px 12px' : '8px 16px', background: 'white', border: '2px solid #4caf50', color: '#4caf50', borderRadius: '6px', fontSize: isMobile ? '11px' : '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
                     onMouseOver={(e) => { e.target.style.background = '#4caf50'; e.target.style.color = 'white' }}
-                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#4caf50' }}>All Attending</button>
+                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#4caf50' }}>{currentContent.rsvp.allAttending}</button>
                   <button onClick={() => setAllGuests('attending', false)}
-                    style={{ padding: '8px 16px', background: 'white', border: '2px solid #f44336', color: '#f44336', borderRadius: '6px', fontSize: '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
+                    style={{ padding: isMobile ? '6px 12px' : '8px 16px', background: 'white', border: '2px solid #f44336', color: '#f44336', borderRadius: '6px', fontSize: isMobile ? '11px' : '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
                     onMouseOver={(e) => { e.target.style.background = '#f44336'; e.target.style.color = 'white' }}
-                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#f44336' }}>All Declining</button>
+                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#f44336' }}>{currentContent.rsvp.allDeclining}</button>
                   <button onClick={() => setAllGuests('airbusInterest', true)}
-                    style={{ padding: '8px 16px', background: 'white', border: '2px solid #2196f3', color: '#2196f3', borderRadius: '6px', fontSize: '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
+                    style={{ padding: isMobile ? '6px 12px' : '8px 16px', background: 'white', border: '2px solid #2196f3', color: '#2196f3', borderRadius: '6px', fontSize: isMobile ? '11px' : '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
                     onMouseOver={(e) => { e.target.style.background = '#2196f3'; e.target.style.color = 'white' }}
-                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#2196f3' }}>All Airbus/Walk</button>
+                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#2196f3' }}>{currentContent.rsvp.allAirbus}</button>
                   <button onClick={() => setAllGuests('shuttleNeeded', true)}
-                    style={{ padding: '8px 16px', background: 'white', border: '2px solid #ff9800', color: '#ff9800', borderRadius: '6px', fontSize: '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
+                    style={{ padding: isMobile ? '6px 12px' : '8px 16px', background: 'white', border: '2px solid #ff9800', color: '#ff9800', borderRadius: '6px', fontSize: isMobile ? '11px' : '13px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' }}
                     onMouseOver={(e) => { e.target.style.background = '#ff9800'; e.target.style.color = 'white' }}
-                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#ff9800' }}>All Need Shuttle</button>
+                    onMouseOut={(e) => { e.target.style.background = 'white'; e.target.style.color = '#ff9800' }}>{currentContent.rsvp.allShuttle}</button>
                 </div>
               </div>
 
               <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: isMobile ? '12px' : '14px' }}>
                   <thead>
                     <tr style={{ background: '#f5f5f5', borderBottom: '2px solid #e0e0e0' }}>
-                      <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: '150px' }}>Name</th>
-                      <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '100px' }}>Will be attending</th>
-                      <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: '140px' }}>Menu Selection</th>
-                      <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: '200px' }}>Dietary Requirements</th>
-                      <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '120px' }}>Airbus Tour / Walk Interest</th>
-                      <th style={{ padding: '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: '100px' }}>Will Require Shuttle</th>
+                      <th style={{ padding: isMobile ? '8px' : '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: isMobile ? '100px' : '150px' }}>{currentContent.rsvp.tableHeaders.name}</th>
+                      <th style={{ padding: isMobile ? '8px' : '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: isMobile ? '80px' : '100px' }}>{currentContent.rsvp.tableHeaders.attending}</th>
+                      <th style={{ padding: isMobile ? '8px' : '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: isMobile ? '120px' : '140px' }}>{currentContent.rsvp.tableHeaders.menu}</th>
+                      <th style={{ padding: isMobile ? '8px' : '12px', textAlign: 'left', fontWeight: '600', color: '#333', minWidth: isMobile ? '150px' : '200px' }}>{currentContent.rsvp.tableHeaders.dietary}</th>
+                      <th style={{ padding: isMobile ? '8px' : '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: isMobile ? '100px' : '120px' }}>{currentContent.rsvp.tableHeaders.airbus}</th>
+                      <th style={{ padding: isMobile ? '8px' : '12px', textAlign: 'center', fontWeight: '600', color: '#333', minWidth: isMobile ? '80px' : '100px' }}>{currentContent.rsvp.tableHeaders.shuttle}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {guestParty.map((guest, index) => (
                       <tr key={guest.id} style={{ borderBottom: '1px solid #e0e0e0', background: index % 2 === 0 ? 'white' : '#fafafa' }}>
-                        <td style={{ padding: '12px', fontWeight: '500', color: '#1a1a1a' }}>{guest.name}</td>
-                        <td style={{ padding: '12px', textAlign: 'center' }}>
+                        <td style={{ padding: isMobile ? '8px' : '12px', fontWeight: '500', color: '#1a1a1a' }}>{guest.name}</td>
+                        <td style={{ padding: isMobile ? '8px' : '12px', textAlign: 'center' }}>
                           <input type="checkbox" checked={guest.attending} 
                             onChange={(e) => updateGuest(guest.id, 'attending', e.target.checked)}
-                            style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
+                            style={{ width: isMobile ? '16px' : '18px', height: isMobile ? '16px' : '18px', cursor: 'pointer' }} />
                         </td>
-                        <td style={{ padding: '12px' }}>
+                        <td style={{ padding: isMobile ? '8px' : '12px' }}>
                           <select value={guest.mealPreference} 
                             onChange={(e) => updateGuest(guest.id, 'mealPreference', e.target.value)}
                             disabled={!guest.attending}
-                            style={{ width: '100%', padding: '8px', border: '1px solid #e0e0e0', borderRadius: '6px', fontSize: '14px', backgroundColor: guest.attending ? 'white' : '#f5f5f5', cursor: guest.attending ? 'pointer' : 'not-allowed' }}>
-                            <option value="">Select...</option>
-                            <option value="duck">Roasted Duck Breast</option>
-                            <option value="fish">Roasted Cod Loin</option>
-                            <option value="tart">Grilled Vegetable Tart (v)</option>
-                            <option value="kid">Children's Menu</option>
-                            <option value="kidv">Children's Menu (v)</option>
+                            style={{ width: '100%', padding: isMobile ? '6px' : '8px', border: '1px solid #e0e0e0', borderRadius: '6px', fontSize: isMobile ? '12px' : '14px', backgroundColor: guest.attending ? 'white' : '#f5f5f5', cursor: guest.attending ? 'pointer' : 'not-allowed' }}>
+                            <option value="">{currentContent.rsvp.menuOptions.select}</option>
+                            <option value="duck">{currentContent.rsvp.menuOptions.duck}</option>
+                            <option value="fish">{currentContent.rsvp.menuOptions.fish}</option>
+                            <option value="tart">{currentContent.rsvp.menuOptions.tart}</option>
+                            <option value="kid">{currentContent.rsvp.menuOptions.kid}</option>
+                            <option value="kidv">{currentContent.rsvp.menuOptions.kidv}</option>
                           </select>
                         </td>
-                        <td style={{ padding: '12px' }}>
+                        <td style={{ padding: isMobile ? '8px' : '12px' }}>
                           <input type="text" value={guest.dietaryRequirements}
                             onChange={(e) => updateGuest(guest.id, 'dietaryRequirements', e.target.value)}
                             disabled={!guest.attending}
-                            placeholder="Optional"
-                            style={{ width: '100%', padding: '8px', border: '1px solid #e0e0e0', borderRadius: '6px', fontSize: '14px', backgroundColor: guest.attending ? 'white' : '#f5f5f5', boxSizing: 'border-box' }} />
+                            placeholder={currentContent.rsvp.dietaryPlaceholder}
+                            style={{ width: '100%', padding: isMobile ? '6px' : '8px', border: '1px solid #e0e0e0', borderRadius: '6px', fontSize: isMobile ? '12px' : '14px', backgroundColor: guest.attending ? 'white' : '#f5f5f5', boxSizing: 'border-box' }} />
                         </td>
-                        <td style={{ padding: '12px', textAlign: 'center' }}>
+                        <td style={{ padding: isMobile ? '8px' : '12px', textAlign: 'center' }}>
                           <input type="checkbox" checked={guest.airbusInterest} 
                             onChange={(e) => updateGuest(guest.id, 'airbusInterest', e.target.checked)}
-                            style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
+                            style={{ width: isMobile ? '16px' : '18px', height: isMobile ? '16px' : '18px', cursor: 'pointer' }} />
                         </td>
-                        <td style={{ padding: '12px', textAlign: 'center' }}>
+                        <td style={{ padding: isMobile ? '8px' : '12px', textAlign: 'center' }}>
                           <input type="checkbox" checked={guest.shuttleNeeded} 
                             onChange={(e) => updateGuest(guest.id, 'shuttleNeeded', e.target.checked)}
-                            style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
+                            style={{ width: isMobile ? '16px' : '18px', height: isMobile ? '16px' : '18px', cursor: 'pointer' }} />
                         </td>
                       </tr>
                     ))}
@@ -879,42 +995,43 @@ export default function App() {
                 </table>
               </div>
 
-              <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+              <div style={{ display: 'flex', gap: isMobile ? '8px' : '12px', marginTop: '8px', flexDirection: isMobile ? 'column' : 'row' }}>
                 <button onClick={() => { setRsvpStep('search'); setSearchName(''); setGuestParty([]) }}
                   disabled={isSubmitting}
-                  style={{ flex: 1, padding: '14px', background: 'white', color: '#1a1a1a', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', opacity: isSubmitting ? 0.6 : 1, transition: 'all 0.2s' }}
+                  style={{ flex: 1, padding: isMobile ? '12px' : '14px', background: 'white', color: '#1a1a1a', border: '2px solid #e0e0e0', borderRadius: '8px', fontSize: isMobile ? '14px' : '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', opacity: isSubmitting ? 0.6 : 1, transition: 'all 0.2s' }}
                   onMouseOver={(e) => !isSubmitting && (e.target.style.borderColor = '#999')}
-                  onMouseOut={(e) => !isSubmitting && (e.target.style.borderColor = '#e0e0e0')}>Back</button>
+                  onMouseOut={(e) => !isSubmitting && (e.target.style.borderColor = '#e0e0e0')}>{currentContent.rsvp.backButton}</button>
                 <button onClick={handleRSVPSubmit}
                   disabled={isSubmitting}
-                  style={{ flex: 2, padding: '14px', background: isSubmitting ? '#999' : '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}
+                  style={{ flex: isMobile ? 1 : 2, padding: isMobile ? '12px' : '14px', background: isSubmitting ? '#999' : '#1a1a1a', color: 'white', border: 'none', borderRadius: '8px', fontSize: isMobile ? '14px' : '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}
                   onMouseOver={(e) => !isSubmitting && (e.target.style.background = '#333')}
                   onMouseOut={(e) => !isSubmitting && (e.target.style.background = '#1a1a1a')}>
-                  {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
+                  {isSubmitting ? currentContent.rsvp.submitting : currentContent.rsvp.submitButton}
                 </button>
               </div>
             </div>
           )}
         </div>
       )}
+      
       {showGiftRegistry && (
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '90%', maxWidth: '500px', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', zIndex: 1000 }}>
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: isMobile ? '95%' : '90%', maxWidth: '500px', background: 'white', borderRadius: '16px', padding: isMobile ? '24px 16px' : '32px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', zIndex: 1000 }}>
           <button onClick={() => setShowGiftRegistry(false)} style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.5)', border: 'none', color: 'white', width: '36px', height: '36px', borderRadius: '50%', cursor: 'pointer', fontSize: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s' }}
             onMouseOver={(e) => e.target.style.background = 'rgba(0,0,0,0.7)'}
             onMouseOut={(e) => e.target.style.background = 'rgba(0,0,0,0.5)'}>×</button>
-          <h2 style={{ margin: '0 0 24px 0', fontSize: '28px', color: '#1a1a1a' }}>Gift Registry</h2>
-          <p style={{ margin: '0 0 16px 0', fontSize: '16px', color: '#666' }}>Your presence on our special day is the greatest gift we could ask for. We are very fortunate to already have many of the essentials for our home. If you wish to mark the occasion with a gift, we have made a selection of pieces, available through the link below. Our bank details are also shared below for anyone who prefers to make a transfer.</p>
-            <a href="https://www.millemercismariage.com/aidancaroline2026" target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '16px', background: '#1a1a1a', color: 'white', textAlign: 'center', borderRadius: '8px', textDecoration: 'none', fontSize: '16px', fontWeight: '600', transition: 'background 0.2s' }}
-              onMouseOver={(e) => e.target.style.background = '#333'}
-              onMouseOut={(e) => e.target.style.background = '#1a1a1a'}>Visit Our Online Registry →</a>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div style={{ textAlign: 'center', padding: '0 0' }}>
-              <p style={{ margin: '0 0 0 0', fontSize: '16px', color: '#666' }}>— or —</p>
-              </div>
-            <div style={{ padding: '20px', background: '#f8f8f8', borderRadius: '12px', border: '2px solid #e0e0e0' }}>
-              <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#333' }}>Bank Transfer (IBAN)</h3>
-              <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Account Name: Caroline Ribere</p>
-              <p style={{ margin: 0, fontSize: '16px', fontFamily: 'monospace', color: '#1a1a1a', wordBreak: 'break-all' }}>FR67 3000 2040 4900 0001 6212 S17</p>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: isMobile ? '24px' : '28px', color: '#1a1a1a' }}>{currentContent.giftRegistry.title}</h2>
+          <p style={{ margin: '0 0 16px 0', fontSize: isMobile ? '14px' : '16px', color: '#666' }}>{currentContent.giftRegistry.description}</p>
+          <a href="https://www.millemercismariage.com/aidancaroline2026" target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: isMobile ? '14px' : '16px', background: '#1a1a1a', color: 'white', textAlign: 'center', borderRadius: '8px', textDecoration: 'none', fontSize: isMobile ? '14px' : '16px', fontWeight: '600', transition: 'background 0.2s' }}
+            onMouseOver={(e) => e.target.style.background = '#333'}
+            onMouseOut={(e) => e.target.style.background = '#1a1a1a'}>{currentContent.giftRegistry.visitRegistry}</a>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '24px' }}>
+            <div style={{ textAlign: 'center', padding: '0' }}>
+              <p style={{ margin: '0', fontSize: isMobile ? '14px' : '16px', color: '#666' }}>{currentContent.giftRegistry.or}</p>
+            </div>
+            <div style={{ padding: isMobile ? '16px' : '20px', background: '#f8f8f8', borderRadius: '12px', border: '2px solid #e0e0e0' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: isMobile ? '16px' : '18px', color: '#333' }}>{currentContent.giftRegistry.bankTransfer}</h3>
+              <p style={{ margin: '0 0 8px 0', fontSize: isMobile ? '13px' : '14px', color: '#666' }}>{currentContent.giftRegistry.accountName}</p>
+              <p style={{ margin: 0, fontSize: isMobile ? '14px' : '16px', fontFamily: 'monospace', color: '#1a1a1a', wordBreak: 'break-all' }}>FR67 3000 2040 4900 0001 6212 S17</p>
             </div>
           </div>
         </div>
@@ -924,19 +1041,19 @@ export default function App() {
         <div onClick={() => { setActiveInfo(null); setShowRSVPForm(false); setShowGiftRegistry(false) }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 999 }} />
       )}
 
-      <div style={{ position: 'fixed', bottom: '80px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '16px', zIndex: 100 }}>
-        <button onClick={() => setShowRSVPForm(true)} style={{ padding: '14px 28px', background: 'rgba(255,255,255,0.9)', border: '2px solid rgba(0,0,0,0.1)', borderRadius: '24px', fontSize: '15px', fontWeight: '600', color: '#1a1a1a', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', transition: 'all 0.2s' }}
+      <div style={{ position: 'fixed', bottom: isMobile ? '20px' : '80px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: isMobile ? '12px' : '16px', zIndex: 100 }}>
+        <button onClick={() => setShowRSVPForm(true)} style={{ padding: isMobile ? '12px 20px' : '14px 28px', background: 'rgba(255,255,255,0.9)', border: '2px solid rgba(0,0,0,0.1)', borderRadius: '24px', fontSize: isMobile ? '13px' : '15px', fontWeight: '600', color: '#1a1a1a', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', transition: 'all 0.2s' }}
           onMouseOver={(e) => { e.target.style.background = 'white'; e.target.style.transform = 'translateY(-2px)' }}
           onMouseOut={(e) => { e.target.style.background = 'rgba(255,255,255,0.9)'; e.target.style.transform = 'translateY(0)' }}>RSVP</button>
-        <button onClick={() => setShowGiftRegistry(true)} style={{ padding: '14px 28px', background: 'rgba(255,255,255,0.9)', border: '2px solid rgba(0,0,0,0.1)', borderRadius: '24px', fontSize: '15px', fontWeight: '600', color: '#1a1a1a', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', transition: 'all 0.2s' }}
+        <button onClick={() => setShowGiftRegistry(true)} style={{ padding: isMobile ? '12px 20px' : '14px 28px', background: 'rgba(255,255,255,0.9)', border: '2px solid rgba(0,0,0,0.1)', borderRadius: '24px', fontSize: isMobile ? '13px' : '15px', fontWeight: '600', color: '#1a1a1a', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', transition: 'all 0.2s' }}
           onMouseOver={(e) => { e.target.style.background = 'white'; e.target.style.transform = 'translateY(-2px)' }}
-          onMouseOut={(e) => { e.target.style.background = 'rgba(255,255,255,0.9)'; e.target.style.transform = 'translateY(0)' }}>Gift Registry</button>
+          onMouseOut={(e) => { e.target.style.background = 'rgba(255,255,255,0.9)'; e.target.style.transform = 'translateY(0)' }}>{currentContent.giftRegistry.title}</button>
       </div>
 
       {modelLoading && (
         <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', textAlign: 'center', zIndex: 1000 }}>
           <div style={{ width: '60px', height: '60px', border: '4px solid rgba(255,255,255,0.3)', borderTop: '4px solid white', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 16px' }} />
-          <p style={{ color: 'white', fontSize: '16px', fontWeight: '500', margin: 0 }}>Loading ...</p>
+          <p style={{ color: 'white', fontSize: isMobile ? '14px' : '16px', fontWeight: '500', margin: 0 }}>Loading ...</p>
           <style>{`
             @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
             @keyframes pulsate { 
