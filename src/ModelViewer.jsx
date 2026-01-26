@@ -178,7 +178,7 @@ const content = {
         {
           id: 'explore',
           title: 'Explorer à votre rythme',
-          body: "Si vous restez un peu plus longtemps (ou même si vous êtes simplement de passage), le document ci-dessous rassemble quelques idées pour profiter de Toulouse et de la région environnante à votre rythme. Rien n'est obligatoire – voyez cela comme un menu de possibilités à choisir selon votre humeur, la météo et vos envies. \n\n EN: <a href='https://tinylink.net/IbGYB' target='_blank' rel='noopener noreferrer' style='color: #1a1a1a; text-decoration: underline;'>Toulouse Travel Guide.pdf</a>\n\nNous restons bien entendu à votre disposition pour toute information complémentaire : bonjour@aidancaroline2026.fr" 
+          body: "Si vous restez un peu plus longtemps (ou même si vous êtes simplement de passage), le document ci-dessous rassemble quelques idées pour profiter de Toulouse et de la région environnante à votre rythme. Rien n'est obligatoire – voyez cela comme un menu de possibilités à choisir selon votre humeur, la météo et vos envies. \n\n FR: <a href='https://drive.google.com/file/d/1O49_9dleT7_21cZQoC2rkCp71kegFfi2/view?usp=sharing' target='_blank' rel='noopener noreferrer' style='color: #1a1a1a; text-decoration: underline;'>Guide visiteur Toulouse.pdf</a>\n\nNous restons bien entendu à votre disposition pour toute information complémentaire : bonjour@aidancaroline2026.fr" 
         }
       ],
       label: 'Activités'
