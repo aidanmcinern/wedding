@@ -916,6 +916,7 @@ export default function App() {
                   {currentContent.rsvp.foundGuests
                     .replace('{count}', guestParty.length)
                     .replace('{plural}', guestParty.length !== 1 ? 's' : '')
+                    .replace('{plural}', guestParty.length !== 1 ? 's' : '')
                   }
                 </p>
                 <div style={{ display: 'flex', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
