@@ -130,13 +130,13 @@ const content = {
       sections: [
         {
           id: 'overview',
-          title: 'Vue dI\'ensemble',
-          body: 'Toulouse regorge dI\'excellents hôtels et dI\'Airbnb adaptés à tous les styles et tous les budgets. Nous vous recommandons de séjourner dans le centre-ville ou à proximité, afin dI\'être proches des restaurants, cafés, boutiques et transports.'
+          title: 'Vue d\'ensemble',
+          body: 'Toulouse regorge d\'excellents hôtels et d\'Airbnb adaptés à tous les styles et tous les budgets. Nous vous recommandons de séjourner dans le centre-ville ou à proximité, afin d\'être proches des restaurants, cafés, boutiques et transports.'
         },
         {
           id: 'options',
           title: 'Quartiers recommandés',
-          body: 'Voici quelques quartiers que vous pourriez envisager:\n• entre historique (Capitole / Carmes) – belle architecture, tout se fait à pied\n• Saint-Étienne – plus calme mais central, proche des parcs et musées\n• Saint-Cyprien – décontracté, juste de lI\'autre côté de la Garonne, avec dI\'excellentes adresses gourmandes.'
+          body: 'Voici quelques quartiers que vous pourriez envisager:\n• Centre historique (Capitole / Carmes) – belle architecture, tout se fait à pied\n• Saint-Étienne – plus calme mais central, proche des parcs et musées\n• Saint-Cyprien – décontracté, juste de l\'autre côté de la Garonne, avec d\'excellentes adresses gourmandes.'
         }
       ],
       label: 'Hébergement'
@@ -189,12 +189,12 @@ const content = {
         {
           id: 'ceremony',
           title: 'Lieu',
-          body: 'La cérémonie et la réception auront tous les deux lieu au Château et dans ses jardins. La journée se veut détendue, nI\'hésitez donc pas à adopter une tenue smart casual.'
+          body: 'La cérémonie et la réception auront tous les deux lieu au Château et dans ses jardins. La journée se veut détendue, n\'hésitez donc pas à adopter une tenue smart casual.'
         },
         {
           id: 'highlights',
           title: 'Programme',
-          body: 'Le programme prévisionnel est le suivant :\n• 14h00 – Arrivée\n• 14h30 – Cérémonie\n• 15h00 – Rafraîchissements & jeux\n• 16h00 – Cocktail\n• 19h00 – Dîner\n• Soirée jusquI\'au bout de la nuit !'
+          body: 'Le programme prévisionnel est le suivant :\n• 14h00 – Arrivée\n• 14h30 – Cérémonie\n• 15h00 – Rafraîchissements & jeux\n• 16h00 – Cocktail\n• 19h00 – Dîner\n• Soirée jusqu\'au bout de la nuit !'
         }
       ],
       label: 'Le Grand Jour'
